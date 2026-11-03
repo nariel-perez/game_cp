@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polarimetría RPG: La Inversión de la Sacarosa</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <!-- Barra de Estado Superior (HUD de Laboratorio) -->
+    <header class="hud-bar">
+      <div class="hud-stats">
+        <div class="hud-stat-item">
+          <span class="hud-label">Catalizador:</span>
+          <span id="hud-acid" class="hud-value">HCl 3.0 M</span>
+        </div>
+        <div class="hud-stat-item">
+          <span class="hud-label">Celda (l):</span>
+          <span class="hud-value">1.0 dm (10 cm)</span>
+        </div>
+        <div class="hud-stat-item">
+          <span class="hud-label">Blanco (α₀):</span>
+          <span id="hud-alpha0" class="hud-value">Pendiente</span>
+        </div>
+        <div class="hud-stat-item">
+          <span class="hud-label">Mezcla (Δt_m):</span>
+          <span id="hud-deltatm" class="hud-value">Pendiente</span>
+        </div>
+        <div class="hud-stat-item">
+          <span class="hud-label">Puntos:</span>
+          <span id="hud-points" class="hud-value">0 / 20</span>
+        </div>
+      </div>
+
+      <div class="hud-controls">
+        <button id="btn-logbook" class="hud-btn" title="Abrir cuaderno de datos">
+          📖 Bitácora
+        </button>
+        <button id="btn-mute" class="hud-btn" title="Activar/Desactivar sonido retro">
+          🔊 Audio ON
+        </button>
+      </div>
+    </header>
+
+    <!-- Escenario Interactivo 2D (Canvas) -->
+    <section class="viewport-frame">
+      <canvas id="scene-canvas" width="760" height="290"></canvas>
+    </section>
+
+    <!-- Caja de Diálogo Estilo RPG Retro -->
+    <section class="dialog-box">
+      <div class="portrait-wrapper">
+        <canvas id="portrait-canvas" width="64" height="64"></canvas>
+      </div>
+      <div class="dialog-content">
+        <div class="speaker-header">
+          <span id="speaker-name">El JTP (Profe de TP)</span>
+          <span id="speaker-role">Jefe de Trabajos Prácticos · Mate en mano</span>
+        </div>
+        <p id="dialog-text"></p>
+      </div>
+    </section>
+
+    <!-- Menú de Acciones y Opciones del Jugador -->
+    <section class="options-panel">
+      <div class="options-title">▸ Seleccioná tu acción de laboratorio:</div>
+      <div id="options-container"></div>
+    </section>
+
+    <!-- Modal de Bitácora / Cuaderno de Laboratorio -->
+    <aside id="logbook-panel" class="logbook-overlay hidden">
+      <div class="logbook-header">
+        <h2>📒 LIBRETA DE LABORATORIO — DATOS EXPERIMENTALES</h2>
+        <button id="btn-close-log" class="hud-btn">✕ Cerrar Libreta</button>
+      </div>
+      <div id="logbook-summary" class="logbook-meta"></div>
+      <div class="table-scroll">
+        <table class="lab-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>t_cron / s</th>
+              <th>t_corr / s</th>
+              <th>α_t / deg</th>
+              <th>ln((α_∞ - α_t)/(α_∞ - α_0))</th>
+              <th>x</th>
+              <th>(1 - x)</th>
+            </tr>
+          </thead>
+          <tbody id="logbook-tbody"></tbody>
+        </table>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="game-footer">
+    Fisicoquímica · TP Cinética Química por Polarimetría (Hidrólisis de Sacarosa) · Controles de Dial: Botones, Teclas ←/→ o Rueda del Mouse
+  </footer>
+
+  <!-- Scripts (Cargados en orden sin requerir servidor web) -->
+  <script src="js/audio.js"></script>
+  <script src="js/kinetics.js"></script>
+  <script src="js/dialogs.js"></script>
+  <script src="js/polarimeter.js"></script>
+  <script src="js/graph.js"></script>
+  <script src="js/exporter.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
