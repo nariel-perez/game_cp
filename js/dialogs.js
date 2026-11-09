@@ -28,7 +28,7 @@ window.Dialogs = {
     scene0_intro: {
       speaker: 'jtp',
       mood: 'mate',
-      text: '«¡Qué hacés, fiera! ¿Todo en orden? Ponete el guardapolvo y las gafas de seguridad antes de que pise el decano. Hoy nos toca el clásico de clásicos: Cinética de Inversión de la Sacarosa por Polarimetría. Vamos a cazar protones en acción. Pero antes de agarrar las pipetas, decime: ¿con qué concentración de ácido querés batirte a duelo hoy?»',
+      text: '«¡Te damos la bienvenida al laboratorio de cinética química! ¡Por las barbas de Faraday, qué alegría tenerte por acá! Ajustate el guardapolvo y las gafas de seguridad antes de empezar. Hoy nos toca una de las experiencias fundamentales: Cinética de Inversión de la Sacarosa por Polarimetría. Vamos a seguir la catálisis ácida paso a paso. Antes de tomar las pipetas, decime: ¿con qué concentración de ácido querés realizar la experiencia hoy?»',
       options: [
         {
           id: 'choose_3M',
@@ -37,12 +37,12 @@ window.Dialogs = {
         },
         {
           id: 'choose_6M',
-          label: '⚡ Elijo HCl 6 M (Modo furioso, cinética el doble de rápida)',
+          label: '⚡ Elijo HCl 6 M (Modo activo, cinética el doble de rápida)',
           action: 'selectAcid6M'
         },
         {
           id: 'ask_inversion',
-          label: '🤔 Che, ¿por qué se le dice "inversión" si no estamos dando vuelta el frasco?',
+          label: '🤔 ¿Por qué se denomina "inversión" a esta reacción?',
           action: 'explainInversion'
         }
       ]
@@ -51,7 +51,7 @@ window.Dialogs = {
     scene0_explain_inversion: {
       speaker: 'jtp',
       mood: 'explicando',
-      text: '«¡Linda pregunta de coloquio, che! Escuchá: la sacarosa original es recontra dextrógira (+66.4°). Pero a medida que el ácido la parte al medio, te genera glucosa (+52.7°) y fructosa (que es una bestia levógira de -92.0°). Al final del día, la fructosa le gana la pulseada a la glucosa y el ángulo neto te queda negativo. El signo de rotación SE INVIRTIÓ. De ahí el nombre, papá. Bueno, basta de charla, elegí el ácido.»',
+      text: '«¡Una pregunta clásica y fundamental! La sacarosa inicial es marcadamente dextrógira (+66.4°). A medida que el ácido cataliza la hidrólisis, se generan cantidades equimolares de glucosa (+52.7°) y fructosa (con un poder rotatorio fuertemente levógiro de -92.0°). Como la fructosa tiene mayor magnitud rotatoria negativa que el aporte positivo de la glucosa, el ángulo óptico neto cambia de signo y pasa a ser negativo. ¡Por la ley de Biot, el sentido de rotación se invirtió! Ahora sí, elijamos la concentración de ácido.»',
       options: [
         {
           id: 'choose_3M',
@@ -60,7 +60,7 @@ window.Dialogs = {
         },
         {
           id: 'choose_6M',
-          label: '⚡ Elijo HCl 6 M (Modo furioso, cinética el doble de rápida)',
+          label: '⚡ Elijo HCl 6 M (Modo activo, cinética el doble de rápida)',
           action: 'selectAcid6M'
         }
       ]
@@ -69,7 +69,7 @@ window.Dialogs = {
     scene0_selected_3M: {
       speaker: 'jtp',
       mood: 'feliz',
-      text: '«Bien ahí, una persona sensata. Con HCl 3 M (1.5 M en la mezcla) nos da tiempo a tomar un matecito entre lecturas sin quemarnos las pestañas. ¡Arrancamos con la preparación de las soluciones!»',
+      text: '«Una elección muy prudente. Con HCl 3 M (1.5 M efectivo en la mezcla), la cinética transcurre a un ritmo pausado y permite registrar las lecturas con tranquilidad. ¡Comencemos con la preparación de las soluciones!»',
       options: [
         {
           id: 'go_prep',
@@ -82,7 +82,7 @@ window.Dialogs = {
     scene0_selected_6M: {
       speaker: 'jtp',
       mood: 'sorpresa',
-      text: '«¡Epa, qué picante venimos hoy! Duplicás los protones, duplicás la velocidad. La vida media se va a caer en picada a casi 10 minutos. ¡Vas a tener que estar re afilado porque esto vuela! ¡Vamos a preparar las soluciones!»',
+      text: '«¡Una opción con mucha energía! Al duplicar los protones, la velocidad se duplica y el tiempo de vida media desciende a unos 10 minutos. Habrá que tomar las lecturas con agilidad. ¡Vamos a preparar las soluciones!»',
       options: [
         {
           id: 'go_prep',
@@ -96,7 +96,7 @@ window.Dialogs = {
     scene1_prep_step1: {
       speaker: 'ayudante',
       mood: 'normal',
-      text: '«Pesaste 20.0 g de sacarosa pura en la balanza analítica y enrasaste con agua destilada en un matraz de 50 mL para obtener tu solución madre al 40% p/v. Ahora pipeteás 25 mL de sacarosa + 25 mL de agua destilada en un Erlenmeyer: ¡listo tu blanco al 20% p/v para medir α₀!»',
+      text: '«Disolviste 20.0 g de sacarosa pura en la balanza analítica hasta completar 50 mL de solución madre al 40% p/v. Ahora tomás 25 mL de esa solución y la mezclás en un Erlenmeyer con 25 mL de agua destilada: tenés tu blanco listo con sacarosa al 20% p/v para medir α₀.»',
       options: [
         {
           id: 'prep_next',
@@ -109,7 +109,7 @@ window.Dialogs = {
     scene1_prep_step2: {
       speaker: 'jtp',
       mood: 'serio',
-      text: '«Pará la mano un toque. Antes de meterle ácido a nada, tenemos que medir α₀ (el ángulo a tiempo cero con el blanco acuoso). Si medís para el diablo este blanco, toda la cinética te va a dar una curva que parece una montaña rusa de la costa. Vamos al polarímetro.»',
+      text: '«Un momento antes de avanzar. Antes de incorporar el ácido, debemos medir α₀ (el ángulo a tiempo cero con el blanco acuoso). Si este valor inicial tiene error, afectará el cálculo de toda la serie cinética posterior. Acerquémonos al polarímetro.»',
       options: [
         {
           id: 'go_polarimeter_calib',
@@ -123,24 +123,24 @@ window.Dialogs = {
     scene2_calib_intro: {
       speaker: 'jtp',
       mood: 'explicando',
-      text: '«Asomate al ocular, che. ¿Ves ese círculo partido al medio? Es el campo bipartito de Laurent. Usá los botones, las flechas del teclado (←/→) o la ruedita del mouse para girar el analizador. Tenés que dejar las dos mitades EN LA MISMÍSIMA PENUMBRA OSCURA.»',
-       farError: '«¡Pero por las barbas de Faraday, che! De un lado parece la cancha de Boca iluminada y del otro una boca de lobo. Metele mano a la perilla que estamos lejísimos.»',
-      brightError: '«Pará, pará. Los dos lados están blancos como papel, te vas a encandilar la retina. La guía dice clarito que el ojo humano detecta el cambio mucho mejor en la penumbra oscura, cuando la luz casi se apaga. Seguí buscando cerca de +13.3°.»',
-      closeError: '«Tibio, tibio... Está casi igualado, pero si afinás el ojo se nota que un lado todavía tira más sombra. Dale con el ajuste fino de 0.1° hasta clavar la igualdad.»',
+      text: '«Asomate al ocular. Ese círculo dividido es el campo bipartito de Laurent. Usá los botones, las flechas del teclado (←/→) o la ruedita del mouse para rotar el analizador. El objetivo es igualar ambas mitades en la misma penumbra oscura, donde el ojo humano es mucho más sensible al contraste.»',
+      farError: '«¡Por las barbas de Faraday! La asimetría entre ambos campos es muy marcada; un semicírculo está totalmente brillante y el otro en sombras. Rotá el dial hacia los ángulos positivos cercanos a +13°.»',
+      brightError: '«¡Cuidado con la vista! Ambos campos están en brillo total. La guía indica claramente que el ojo humano es mucho más sensible a las diferencias de intensidad en la penumbra oscura, cuando la iluminación es tenue. Busquemos el ajuste fino cerca de +13.3°.»',
+      closeError: '«Muy cerca. Si observás con atención, una de las mitades conserva una leve sombra. Aplicá el ajuste fino de 0.1° hasta lograr la penumbra simétrica.»',
       successAyudante: function (alpha0) {
         return `«¡CLAC! Ambos campos quedaron fundidos en una penumbra perfecta. Lectura registrada en la libreta: α₀ = +${alpha0.toFixed(2)}°. ¡Subiste de nivel! Tu agudeza óptica sumó +10 de respeto en la cátedra.»`;
       },
-      successJtp: '«¡Una pinturita! Qué mano tenés, che. Guardate ese número bajo siete llaves que ahora se viene lo picante: la mezcla con el ácido.»'
+      successJtp: '«¡Excelente calibración! Muy buen ajuste óptico. Registremos ese valor con precisión porque ahora llega el momento clave: el contacto con el ácido catalizador.»'
     },
 
     // ESCENA 3: El Desafío del Tiempo Cero (Mezcla y Delta t_m)
     scene3_mix_intro: {
       speaker: 'jtp',
       mood: 'serio',
-      text: '«Llegó la hora de la verdad. Al momento exacto en que la primera gota de HCl toque los 25 mL de sacarosa, arranca la reacción. El tiempo no perdona. Mantené apretado el botón de vertido hasta vaciar la probeta y agitar para registrar el tiempo de mezcla Δt_m.»',
-      TooShort: '«¡Pará un cachito! Soltaste antes de terminar de volcar el ácido. Mantené apretado hasta que el medidor de mezcla llegue al 100%.»',
+      text: '«Llegó el instante del tiempo cero. En el momento exacto en que la solución ácida entre en contacto con los 25 mL de sacarosa, comienza la reacción. Presioná el botón para iniciar el vertido y el cronómetro, y esperá al 100% de mezcla para registrar el tiempo de mezcla Δt_m.»',
+      TooShort: '«¡Un momento! Todavía no se completó el vertido ni la homogeneización del ácido. Esperá hasta que el indicador de mezcla llegue al 100%.»',
       success: function (deltaTm, t0Corr) {
-        return `«¡Impecable! Cronómetro clavado en Δt_m = ${deltaTm.toFixed(2)} s. Y como somos gente de ciencia rigurosa, no nos comemos los mocos: aplicamos la corrección de tiempo de la guía (t₀ = Δt_m / 2 = ${t0Corr.toFixed(2)} s). A cada lectura del reloj le descontamos esos ${t0Corr.toFixed(2)} segundos.»`;
+        return `«¡Impecable! Registro cronometrado en Δt_m = ${deltaTm.toFixed(2)} s. Aplicamos el criterio cinético de la guía para el tiempo cero (t₀ = Δt_m / 2 = ${t0Corr.toFixed(2)} s). A cada tiempo registrado en el cronómetro se le descontará esta corrección.»`;
       }
     },
 
@@ -148,7 +148,7 @@ window.Dialogs = {
     scene4_cell_intro: {
       speaker: 'ayudante',
       mood: 'normal',
-      text: '«Enjuagaste la celda de 10 cm (1.0 dm) dos veces con una pequeña porción de la mezcla reactiva para evitar dilución residual, la llenaste al ras y le clavaste la tapa a rosca... Pero mirá a trasluz.»',
+      text: '«Enjuagaste la celda de 10 cm (1.0 dm) dos veces con una pequeña porción de la mezcla reactiva para evitar dilución residual, la llenaste al ras y colocaste la tapa a rosca... Pero mirá a trasluz.»',
       options: [
         {
           id: 'inspect_cell',
@@ -161,21 +161,21 @@ window.Dialogs = {
     scene4_bubble_alert: {
       speaker: 'jtp',
       mood: 'alerta',
-      text: '«¡Por el fantasma de Arrhenius! Te quedó una burbuja gigante plantada justo en el medio del tubo. Si el haz de luz pega ahí, la dispersión óptica nos va a mandar directo a marzo. ¿Qué hacés?»',
+      text: '«¡Por el fantasma de Arrhenius! Quedó una burbuja de aire justo en el centro del tubo. Si el haz de luz incide ahí, la dispersión óptica va a arruinar las lecturas. ¿Cómo procedemos?»',
       options: [
         {
           id: 'bubble_ignore',
-          label: '🤷 Dejala ahí, total la luz pasa por los costados',
+          label: '🤷 Dejarla ahí, la luz pasa por los costados',
           action: 'bubbleChoiceIgnore'
         },
         {
           id: 'bubble_shake',
-          label: '🌪️ Sacudir la celda como si fuera un pomo de mayonesa',
+          label: '🌪️ Agitar la celda con fuerza para desarmarla',
           action: 'bubbleChoiceShake'
         },
         {
           id: 'bubble_tilt',
-          label: '👌 Inclinar el tubo con cariño hacia la ampolla reservorio',
+          label: '👌 Inclinar el tubo suavemente hacia la ampolla reservorio',
           action: 'bubbleChoiceTilt'
         }
       ]
@@ -184,19 +184,19 @@ window.Dialogs = {
     scene4_bubble_ignore: {
       speaker: 'jtp',
       mood: 'enojado',
-      text: '«¿Vos me estás cargando? Si metés esa burbuja al polarímetro, la refracción te va a tirar valores del planeta Marte y la ley de Malus se va al tacho. Pensá un segundo, che.»'
+      text: '«¡Cuidado! Si dejamos esa burbuja en el camino óptico, la refracción distorsionará por completo la ley de Malus y las medidas rotatorias. Pensemos en la geometría del tubo polarimétrico.»'
     },
 
     scene4_bubble_shake: {
       speaker: 'ayudante',
       mood: 'alerta',
-      text: '«¡Desastre total! La burbuja grande se desarmó en cincuenta microburbujas espumosas. El tubo parece una soda. Tuviste que vaciar y volver a llenar... y la burbuja grande volvió a aparecer. Probá con más sutileza.»'
+      text: '«Al agitar con fuerza, la burbuja grande se dividió en numerosas microburbujas espumosas que enturbian el líquido. Hubo que vaciar y volver a enrasar el tubo... y la burbuja volvió a aparecer. Probemos con una maniobra más suave.»'
     },
 
     scene4_bubble_success: {
       speaker: 'jtp',
       mood: 'feliz',
-      text: '«¡Claro que sí, pibe! Para eso tiene esa jorobita ensanchada el tubo polarimétrico. La burbuja quedó atrapada arriba y el camino óptico de 1.0 dm está más limpio que quirófano. ¡Al polarímetro!»',
+      text: '«¡Exacto! Para eso está diseñada la ampolla ensanchada del tubo polarimétrico. La burbuja quedó alojada en la parte superior y el camino óptico de 1.0 dm quedó totalmente despejado. ¡Vamos al polarímetro!»',
       options: [
         {
           id: 'start_kinetics',
@@ -210,28 +210,28 @@ window.Dialogs = {
     scene5_kinetics_intro: {
       speaker: 'jtp',
       mood: 'mate',
-      text: '«Bueno, fiera, como ya demostraste que sabés alinear el polarímetro a mano como los dioses, ahora dejamos que el analizador trabaje en modo rápido para no estar acá hasta la noche. Andá dándole al botón de avance para capturar los 20 puntos de la reacción.»',
+      text: '«Habiendo verificado el manejo manual del ocular de Laurent, habilitamos el modo ágil del analizador para registrar sistemáticamente los 20 puntos cinéticos de la reacción. Pulsá el botón de avance para ir registrando las lecturas.»',
       comments: {
         first: function (alpha, tMin) {
-          return `«Punto 1 (t = ${tMin} min): α_t = ${alpha >= 0 ? '+' : ''}${alpha.toFixed(2)}°. Recién arranca el baile. La sacarosa todavía manda, pero ya empezó a caer.»`;
+          return `«Punto 1 (t = ${tMin} min): α_t = ${alpha >= 0 ? '+' : ''}${alpha.toFixed(2)}°. Comienza el seguimiento cinético: la sacarosa predomina en la mezcla, pero su concentración ya comienza a descender.»`;
         },
         early: function (pt, alpha) {
-          return `«Punto ${pt}/20 registrado: α_t = ${alpha >= 0 ? '+' : ''}${alpha.toFixed(2)}°. Mirá cómo baja esa rotación, papá. El HCl no tiene piedad con los enlaces glucosídicos.»`;
+          return `«Punto ${pt}/20 registrado: α_t = ${alpha >= 0 ? '+' : ''}${alpha.toFixed(2)}°. La rotación desciende sostenidamente a medida que los protones catalizan la hidrólisis de los enlaces glucosídicos.»`;
         },
         mid: function (pt, alpha, xFrac) {
-          return `«Punto ${pt}/20: α_t = ${alpha >= 0 ? '+' : ''}${alpha.toFixed(2)}°. Ya se hidrolizó el ${(xFrac * 100).toFixed(1)}% de la sacarosa inicial. ¡Seguí dándole!»`;
+          return `«Punto ${pt}/20: α_t = ${alpha >= 0 ? '+' : ''}${alpha.toFixed(2)}°. Ya se hidrolizó el ${(xFrac * 100).toFixed(1)}% de la sacarosa inicial. ¡Continuemos registrando!»`;
         },
         zeroCross: function (pt, alpha) {
-          return `«¡PARÁ TODO! Mirá el dial en el punto ${pt}: α_t = ${alpha.toFixed(2)}°. ¡Acaba de cruzar el cero! La solución se volvió oficialmente LEVÓGIRA. La fructosa liberada (-92°) ya pesa más que la sacarosa y la glucosa juntas. ¡Hermosa la fisicoquímica cuando sale bien!»`;
+          return `«¡Atención al dial en el punto ${pt}: α_t = ${alpha.toFixed(2)}°! ¡Acaba de cruzar el cero óptico! La solución pasa a ser nítidamente LEVÓGIRA. El aporte rotatorio negativo de la fructosa liberada (-92°) supera a la sacarosa remanente y a la glucosa.»`;
         },
         late: function (pt, alpha, xFrac) {
-          return `«Punto ${pt}/20: α_t = ${alpha.toFixed(2)}° (conversión ${(xFrac * 100).toFixed(1)}%). La curva ya va planchando asintóticamente. La sacarosa está en las últimas.»`;
+          return `«Punto ${pt}/20: α_t = ${alpha.toFixed(2)}° (conversión ${(xFrac * 100).toFixed(1)}%). La velocidad de cambio disminuye al aproximarse al equilibrio de la hidrólisis completa.»`;
         },
         completed20: function (alpha) {
-          return `«¡Punto 20/20 clavado (α_t = ${alpha.toFixed(2)}°)! Ya tenés toda la curva cinética. Ahora habilitamos el salto temporal de 24 horas para medir el ángulo a tiempo infinito (α_∞).»`;
+          return `«¡Punto 20/20 registrado (α_t = ${alpha.toFixed(2)}°)! Ya tenemos toda la curva cinética. Ahora habilitamos el salto temporal de 24 horas para medir el ángulo a tiempo infinito (α_∞).»`;
         },
         infinityDone: function (alphaInf) {
-          return `«¡Al día siguiente en el laboratorio! Llegamos a t = ∞ (24 hs). La sacarosa murió por la patria, se hidrolizó toda (x ≈ 1.0). Clavamos la lectura final: α_∞ = ${alphaInf.toFixed(2)}°. ¡Tenemos la serie completa, maestro!»`;
+          return `«¡Al día siguiente en el laboratorio! Llegamos a t = ∞ (24 hs). La hidrólisis de la sacarosa es completa (x ≈ 1.0). Registramos la lectura final: α_∞ = ${alphaInf.toFixed(2)}°. ¡Por la constante de Arrhenius y la ley de Biot, tenemos la serie completa!»`;
         }
       }
     },
@@ -240,7 +240,7 @@ window.Dialogs = {
     scene6_final: {
       speaker: 'jtp',
       mood: 'feliz',
-      text: '«Che, posta, impecable laburo. Mirá lo que es ese gráfico preliminar de ln((α_∞ - α_t)/(α_∞ - α_0)) contra el tiempo: te quedó una recta tan derecha que podés tirar un tiro al blanco. Descargate el archivo .txt con todos los encabezados y la tabla para armar tu informe.»'
+      text: '«¡Excelente labor experimental! Mirá los gráficos en pantalla: el ajuste lineal de ln((α_∞ - α_t)/(α_∞ - α_0)) contra el tiempo refleja con claridad la cinética de pseudo-primer orden. Descargá el archivo .txt con todos los datos tabulados para calcular la constante k y armar tu informe.»'
     }
   }
 };

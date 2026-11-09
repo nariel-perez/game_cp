@@ -307,7 +307,7 @@ window.Game = (function () {
     if (!state.isPouring && state.mixProgress === 0) {
       return [
         {
-          label: '🔴 ¡Mandale mecha! (Iniciar Vertido y Cronómetro)',
+          label: '🔴 ¡Iniciar Vertido y Cronómetro!',
           className: 'rpg-btn-accent',
           onClick: startPouringTimer
         }
@@ -317,8 +317,8 @@ window.Game = (function () {
       return [
         {
           label: canStop
-            ? '⏹️ ¡Mezcla Homogénea! Clavar Cronómetro (Δt_m)'
-            : '⏳ Volcando y agitando... esperá al 100%',
+            ? '⏹️ ¡Mezcla Homogénea! Registrar Cronómetro (Δt_m)'
+            : '⏳ Volcando y homogeneizando... esperá al 100%',
           className: canStop ? 'rpg-btn-accent' : '',
           onClick: stopPouringTimer
         }
