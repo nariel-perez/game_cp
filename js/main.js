@@ -688,6 +688,51 @@ window.Game = (function () {
   // EVENTOS DE TECLADO, RUEDA DEL MOUSE Y BUCLE DE ANIMACIÓN
   // ===========================================================================
   function bindEvents() {
+    const btnDismissRotate = document.getElementById('btn-dismiss-rotate');
+    if (btnDismissRotate) {
+      btnDismissRotate.addEventListener('click', () => {
+        document.body.classList.add('ignore-rotate-prompt');
+        window.AudioEngine.playSelect();
+      });
+    }
+
+    const unlockMobileAudio = () => {
+      window.AudioEngine.playTextBlip('jtp');
+      window.removeEventListener('touchstart', unlockMobileAudio);
+    };
+    window.addEventListener('touchstart', unlockMobileAudio, { passive: true });
+
+    let touchStartX = null;
+    dom.sceneCanvas.addEventListener(
+      'touchstart',
+      e => {
+        if (state.phase === 'calibration' && !state.calibDone && e.touches.length > 0) {
+          touchStartX = e.touches[0].clientX;
+        }
+      },
+      { passive: true }
+    );
+
+    dom.sceneCanvas.addEventListener(
+      'touchmove',
+      e => {
+        if (state.phase === 'calibration' && !state.calibDone && touchStartX !== null && e.touches.length > 0) {
+          const dx = e.touches[0].clientX - touchStartX;
+          if (Math.abs(dx) >= 8) {
+            const steps = Math.trunc(dx / 8);
+            rotateDial(steps * 0.1);
+            touchStartX += steps * 8;
+          }
+          e.preventDefault();
+        }
+      },
+      { passive: false }
+    );
+
+    window.addEventListener('touchend', () => {
+      touchStartX = null;
+    });
+
     window.addEventListener('keydown', e => {
       if (state.phase === 'calibration' && !state.calibDone) {
         if (e.key === 'ArrowLeft') {
